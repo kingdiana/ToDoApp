@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\libs\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\build\intermediates\pre-dexed\debug\commons-io-2.4-c20dfbba0fa14e492a340c34a701c7e2bba4c811.jar" />
+    </item>
+    <item
+        jar="C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\build\intermediates\pre-dexed\debug\classes-55600fbab4d9d4eae07c85bf2921a90242bd92f2.jar" />
+    </item>
+    <item
+        jar="C:\Program_Files\adt-bundle-windows-x86_64-20140321\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-3e1c0f212179351b32b4ad98ef098101dce31717.jar" />
+    </item>
+
+</items>
