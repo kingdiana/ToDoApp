@@ -250,8 +250,8 @@ int id action_settings 0x7f080042
 int id activity_chooser_view_content 0x7f080025
 int id always 0x7f080013
 int id beginning 0x7f08000f
-int id btn_ok 0x7f08003e
-int id buttonAdd 0x7f080040
+int id btnAddItem 0x7f080040
+int id btn_save 0x7f08003e
 int id checkbox 0x7f08002d
 int id collapseActionView 0x7f080014
 int id default_activity_button 0x7f080028
@@ -352,9 +352,8 @@ int string add_hint 0x7f0a000f
 int string app_name 0x7f0a0010
 int string edit_msg 0x7f0a0011
 int string hello_world 0x7f0a0012
-int string ok_button_label 0x7f0a0013
-int string save_button_label 0x7f0a0014
-int string title_activity_edit_item 0x7f0a0015
+int string save_button_label 0x7f0a0013
+int string title_activity_edit_item 0x7f0a0014
 int style AppBaseTheme 0x7f0b0000
 int style AppTheme 0x7f0b0001
 int style TextAppearance_AppCompat_Base_CompactMenu_Dialog 0x7f0b0002

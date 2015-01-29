@@ -8,7 +8,6 @@
     <string name="add_hint">Add a new item</string>
     <string name="title_activity_edit_item">Edit Item</string>
     <string name="save_button_label">Save</string>
-    <string name="ok_button_label">Ok</string>
     <string name="edit_msg">Edit item below:</string>
 
 </resources>

@@ -145,7 +145,6 @@
     <string name="app_name">Simple ToDo</string>
     <string name="edit_msg">Edit item below:</string>
     <string name="hello_world">Hello world!</string>
-    <string name="ok_button_label">Ok</string>
     <string name="save_button_label">Save</string>
     <string name="title_activity_edit_item">Edit Item</string>
     <!-- From: file:/C:/Users/Diana/workspace-codepath-2015/ToDoApp/app/src/main/res/values/styles.xml -->

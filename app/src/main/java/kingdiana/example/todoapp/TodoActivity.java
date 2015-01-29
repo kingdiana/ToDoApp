@@ -22,7 +22,6 @@ public class TodoActivity extends ActionBarActivity {
 	private ArrayList<String> todoItems;
 	private ArrayAdapter<String> todoAdapter;
 	private ListView lvItems;
-	private EditText etNewItem;
     // REQUEST_CODE can be any value we like, used to determine the result type later
     private final int REQUEST_CODE = 20;
     private int editPos;
@@ -32,17 +31,16 @@ public class TodoActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
         
-        populateArrayList();
+        readItems();
         todoAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, todoItems);
         lvItems = (ListView) findViewById(R.id.lvItems);
         lvItems.setAdapter(todoAdapter);
-        etNewItem = (EditText) findViewById(R.id.etNewItem);
         setupListViewListener();
     }
 
     protected void onStop() {
         super.onStop();
-        saveItems();
+        writeItems();
     }
 
     @Override
@@ -53,6 +51,7 @@ public class TodoActivity extends ActionBarActivity {
             String newValue = data.getStringExtra("new_value");
             todoItems.set(editPos, newValue);
             todoAdapter.notifyDataSetChanged();
+            writeItems();
         }
     }
 
@@ -63,7 +62,7 @@ public class TodoActivity extends ActionBarActivity {
                                            int pos, long id) {
                 todoItems.remove(pos);
                 todoAdapter.notifyDataSetChanged();
-                saveItems();
+                writeItems();
                 return true;
             }
         });
@@ -79,18 +78,11 @@ public class TodoActivity extends ActionBarActivity {
         });
     }
     
-    private void populateArrayList() {
-		todoItems = new ArrayList<String>();
-        readItems();
-	}
-    
-    public void onAddedItem(View v) {
+    public void onAddItem(View v) {
+        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
     	todoAdapter.add(etNewItem.getText().toString());
     	etNewItem.setText("");
-    }
-
-    public void onSave(View v) {
-        this.finish();
+        writeItems();
     }
 
 	@Override
@@ -121,7 +113,7 @@ public class TodoActivity extends ActionBarActivity {
         }
     }
 
-    private void saveItems() {
+    private void writeItems() {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
         try {

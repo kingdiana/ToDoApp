@@ -29,8 +29,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ok_button_label"
-        android:id="@+id/btn_ok"
+        android:text="@string/save_button_label"
+        android:id="@+id/btn_save"
         android:layout_below="@+id/et_edit_value"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

@@ -21,8 +21,9 @@ public class EditItemActivity extends ActionBarActivity {
         setContentView(R.layout.activity_edit_item);
         EditText et_item = (EditText) findViewById(R.id.et_edit_value);
         et_item.setText(oldValue);
+        et_item.setSelection(oldValue.length());
 
-        Button button = (Button) findViewById(R.id.btn_ok);
+        Button button = (Button) findViewById(R.id.btn_save);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 onSubmit(v);

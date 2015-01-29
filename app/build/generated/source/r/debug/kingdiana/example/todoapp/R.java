@@ -831,8 +831,8 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f080025;
         public static final int always=0x7f080013;
         public static final int beginning=0x7f08000f;
-        public static final int btn_ok=0x7f08003e;
-        public static final int buttonAdd=0x7f080040;
+        public static final int btnAddItem=0x7f080040;
+        public static final int btn_save=0x7f08003e;
         public static final int checkbox=0x7f08002d;
         public static final int collapseActionView=0x7f080014;
         public static final int default_activity_button=0x7f080028;
@@ -941,9 +941,8 @@ containing a value of this type.
         public static final int app_name=0x7f0a0010;
         public static final int edit_msg=0x7f0a0011;
         public static final int hello_world=0x7f0a0012;
-        public static final int ok_button_label=0x7f0a0013;
-        public static final int save_button_label=0x7f0a0014;
-        public static final int title_activity_edit_item=0x7f0a0015;
+        public static final int save_button_label=0x7f0a0013;
+        public static final int title_activity_edit_item=0x7f0a0014;
     }
     public static final class style {
         /** 
