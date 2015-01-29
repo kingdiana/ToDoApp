@@ -1,4 +1,0 @@
-C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\build\intermediates\classes\debug
-C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\build\intermediates\pre-dexed\debug\commons-io-2.4-c20dfbba0fa14e492a340c34a701c7e2bba4c811.jar
-C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\build\intermediates\pre-dexed\debug\classes-55600fbab4d9d4eae07c85bf2921a90242bd92f2.jar
-C:\Users\Diana\workspace-codepath-2015\ToDoApp\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-3e1c0f212179351b32b4ad98ef098101dce31717.jar

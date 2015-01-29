@@ -1,5 +1,6 @@
 package kingdiana.example.todoapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -21,7 +22,10 @@ public class TodoActivity extends ActionBarActivity {
 	private ArrayList<String> todoItems;
 	private ArrayAdapter<String> todoAdapter;
 	private ListView lvItems;
-	EditText etNewItem;
+	private EditText etNewItem;
+    // REQUEST_CODE can be any value we like, used to determine the result type later
+    private final int REQUEST_CODE = 20;
+    private int editPos;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,30 +41,46 @@ public class TodoActivity extends ActionBarActivity {
     }
 
     protected void onStop() {
-       super.onStop();
+        super.onStop();
         saveItems();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // REQUEST_CODE is defined above
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
+            // Extract name value from result extras
+            String newValue = data.getStringExtra("new_value");
+            todoItems.set(editPos, newValue);
+            todoAdapter.notifyDataSetChanged();
+        }
+    }
+
     private void setupListViewListener() {
-    	lvItems.setOnItemLongClickListener(new OnItemLongClickListener() {
-
-			@Override
-			public boolean onItemLongClick(AdapterView<?> adapter, View item,
-					int pos, long id) {
-				todoItems.remove(pos);
-				todoAdapter.notifyDataSetChanged();
+        lvItems.setOnItemLongClickListener(new OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapter, View item,
+                                           int pos, long id) {
+                todoItems.remove(pos);
+                todoAdapter.notifyDataSetChanged();
                 saveItems();
-				return true;
-			}
+                return true;
+            }
+        });
 
-    	});
+        lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int pos, long arg) {
+                Intent i = new Intent(TodoActivity.this, EditItemActivity.class);
+                i.putExtra("current_value", todoItems.get(pos));
+                editPos = pos;
+                startActivityForResult(i, REQUEST_CODE);
+            }
+        });
     }
     
     private void populateArrayList() {
 		todoItems = new ArrayList<String>();
-//		todoItems.add("Item 1");
-//		todoItems.add("Item 2");
-//		todoItems.add("Item 3");
         readItems();
 	}
     
@@ -69,9 +89,12 @@ public class TodoActivity extends ActionBarActivity {
     	etNewItem.setText("");
     }
 
+    public void onSave(View v) {
+        this.finish();
+    }
+
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.todo, menu);
         return true;
@@ -83,9 +106,7 @@ public class TodoActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        if (id == R.id.action_settings) return true;
         return super.onOptionsItemSelected(item);
     }
 
